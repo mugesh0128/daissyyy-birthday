@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Daissyyy 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#ff5ca8,#6ec6ff,#ffb6d9,#87ceeb);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#ff69b4;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+z-index:9999;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:4rem;
+text-shadow:0 0 20px white;
+}
+
+.hero p{
+margin-top:15px;
+font-size:1.3rem;
+}
+
+.btn{
+padding:15px 35px;
+margin-top:25px;
+border:none;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+background:white;
+color:#ff1493;
+font-weight:bold;
+}
+
+.card{
+display:none;
+max-width:900px;
+margin:30px auto;
+padding:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border-radius:25px;
+line-height:2;
+}
+
+.gallery{
+padding:50px 20px;
+}
+
+.photos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.photos img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:20px;
+border:4px solid white;
+transition:.5s;
+}
+
+.photos img:hover{
+transform:scale(1.05);
+}
+
+.secret{
+max-width:800px;
+margin:30px auto;
+padding:25px;
+background:rgba(255,255,255,.15);
+border-radius:20px;
+}
+
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:30px;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+.footer{
+padding:50px;
+font-size:24px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+💗 Loading Surprise For Daissyyy... 💗
+</div>
+
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<p>A Special Surprise For Someone Truly Special ❤️</p>
+
+<button class="btn" onclick="startMusic()">
+🎵 Play Music
+</button>
+
+<button class="btn" onclick="openGift()">
+🎁 Open Gift
+</button>
+
+</section>
+
+<div class="card" id="wish">
+
+<h2>💖 Happy Birthday Daissyyy 💖</h2>
+
+<p>
+Dear Sanjavi,
+
+🎂 Happy 22nd Birthday 🎂
+
+Today is all about celebrating someone truly special.
+
+Your smile, kindness, caring nature and beautiful heart make every moment brighter.
+
+Thank you for all the memories, conversations and laughter.
+
+May your life be filled with happiness, success, peace and unforgettable moments.
+
+Some people become memories.
+Some people become a reason to smile.
+You have been both.
+
+Keep smiling.
+Keep shining.
+Keep being amazing.
+
+❤️ With Love,<br>
+Mugesh ❤️
+</p>
+
+</div>
+
+<section class="gallery">
+
+<h2>📸 Beautiful Memories 📸</h2>
+<br><br>
+
+<div class="photos">
+<img src="childhood.jpg">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+</div>
+
+</section>
+
+<div class="secret">
+<h2>💖 A Little Secret 💖</h2>
+
+<p>
+Some people become memories.<br>
+Some people become a reason to smile.<br>
+Thank you for being both. 💗
+</p>
+</div>
+
+<div class="footer">
+🎉 Happy Birthday Daissyyy 🎉
+</div>
+
+<div class="heart" style="left:10%">💖</div>
+<div class="heart" style="left:25%;animation-delay:1s">💗</div>
+<div class="heart" style="left:40%;animation-delay:2s">💕</div>
+<div class="heart" style="left:60%;animation-delay:3s">💖</div>
+<div class="heart" style="left:80%;animation-delay:4s">💗</div>
+
+<script>
+
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},3000);
+
+const text="🎂 Happy Birthday Daissyyy 💗";
+let i=0;
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeWriter,100);
+}
+}
+
+typeWriter();
+
+function startMusic(){
+document.getElementById("music").play();
+}
+
+function openGift(){
+
+document.getElementById("wish").style.display="block";
+
+for(let i=0;i<80;i++){
+let conf=document.createElement("div");
+conf.innerHTML="🎉";
+conf.style.position="fixed";
+conf.style.left=Math.random()*100+"vw";
+conf.style.top="-20px";
+conf.style.fontSize="25px";
+document.body.appendChild(conf);
+
+let pos=0;
+
+let fall=setInterval(()=>{
+pos+=5;
+conf.style.top=pos+"px";
+
+if(pos>window.innerHeight){
+clearInterval(fall);
+conf.remove();
+}
+},20);
+}
+
+window.scrollTo({
+top:700,
+behavior:"smooth"
+});
+
+}
+</script>
+
+</body>
+</html>
